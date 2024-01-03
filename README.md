@@ -106,11 +106,69 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 
 
+
 ### PROGRAM 
 /*
+# SR FLIP FLOP
+module exp_5_1(S,R,clk,Q,Qbar);
+input S,R,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end
+endmodule
+
+# D FLIP FLOP
+
+module exp_5D(D,clk,Q,Qbar);
+input D,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin 
+Q=D;
+Qbar=~D;
+end
+endmodule
+
+# JK FLIPFLOP
+module exp_5_2(J,K,clk,Q,Qbar);
+input J,K,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=(J&(~Q))|((~K)&Q);
+Qbar=((~J)&(Qbar))|K&(~Qbar);
+end
+endmodule
+
+# T-FLIPFLOP
+module exp_5_4(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=(T&(~Q))|((~T)&Q);
+Qbar=((~T)&Qbar)|(T&(~Qbar));
+end 
+endmodule
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: SUDARSHANA S
+RegisterNumber:  212223050054
 */
 
 
@@ -119,7 +177,17 @@ RegisterNumber:
 
 
 ### RTL LOGIC FOR FLIPFLOPS 
+# SR FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/bfe1d61b-73ea-4496-9362-3447c561e9f7)
 
+# D FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/666c4197-0472-40b4-927e-0a12042b7cdf)
+
+# JK FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/de57f01f-0173-44b3-85fc-1bc67c9ca709)
+
+# T FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/ad08d90f-b69e-4879-b6e1-5db6f6fb8db2)
 
 
 
@@ -129,7 +197,17 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
+# SR FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/f88059ee-9855-4e11-bfc8-e1744774317d)
 
+# D FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/78e1ee4f-5164-4924-a609-b89b914bfde8)
+
+# JK FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/b8a44998-1a3b-46ed-9f39-93773704ea1b)
+
+# T FLIPFLOP
+![image](https://github.com/sudarshana11/Experiment--05-Implementation-of-flipflops-using-verilog/assets/155507129/ef886e80-ebcd-40df-b2f1-dfdb89275483)
 
 
 
@@ -138,3 +216,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+  Implementation-of-flipflops-using-verilog successfully completed.
